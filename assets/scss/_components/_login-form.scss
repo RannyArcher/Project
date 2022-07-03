@@ -1,0 +1,46 @@
+.login-form {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .container {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: var(--shadow-light);
+  }
+
+  &__submit {
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--dark-gray);
+    cursor: pointer;
+    transition: .25s ease-in-out;
+
+    &:hover {
+      background-color: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+  }
+  
+  &__links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 5px;
+    
+    & > * {
+      color: var(--black);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
