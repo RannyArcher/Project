@@ -1,10 +1,31 @@
 .login-form {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  max-width: 1200px;
+  gap: 25px;
+  margin: 0 25px;
+
+  @media screen and (max-width: 700px) {
+    justify-content: center;
+    margin: 0;
+    background: url(/assets/images/login-background.jpg) no-repeat center / cover;
+
+    .image-container {  
+      display: none;
+    }
+  }
   
-  .container {
+
+  .image {
+    width: 100%;
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+  }
+  
+  .form-container {
     background-color: var(--white);
     padding: 25px;
     border-radius: 10px;
@@ -12,8 +33,14 @@
     flex-direction: column;
     gap: 25px;
     box-shadow: var(--shadow-light);
-  }
+    width: clamp(250px, 100%, 350px);
+    margin: 0 10px;
 
+    @media screen and (max-width: 700px) {
+      background-color: transparentize($color: white , $amount: 0.05)
+    }
+
+  }
   &__submit {
     background-color: transparent;
     padding: 5px;
