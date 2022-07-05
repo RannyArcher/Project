@@ -5,17 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/login.js" defer></script>
   <title>Document</title>
 </head>
 <body>
   <form method="POST" action="" class="login-form">
     <div class="image-container">
-      <img class="image" src="assets/images/login-background.jpg" alt="">
+      <img class="image" width="100%" src="assets/images/login-background.jpg" alt="">
     </div>
 
 
     <div class="form-container">
-
+      
       <div class="entry-checker">
         <input required type="email" name="" placeholder=" " id="email" class="entry-checker__input">
         <label class="entry-checker__label" for="email">email</label>
@@ -26,14 +27,76 @@
         <label class="entry-checker__label" for="password">password</label>
       </div>
 
-      <button class="login-form__submit">Login</button>
+      <button class="submit-btn">Login</button>
 
       <div class="login-form__links">
         <a href="#">Forget your password ?</a>
-        <a href="#">Don't have an account ?</a>
+        <a href="#register">Don't have an account ?</a>
       </div>
       
     </div>
+  </form>
+
+
+  <form method="POST" action="" id="register">
+    
+    <div class="form-container">
+
+      <h1 class="title">Register Now!</h1>
+
+      <div class="entries-container">
+        <div class="entry-checker">
+          <input required type="text" placeholder=" " name="" id="first-name" class="entry-checker__input">
+          <label for="first-name" class="entry-checker__label">First name</label>
+        </div>
+        <div class="entry-checker">
+          <input required type="text" placeholder=" " name="" id="name" class="entry-checker__input">
+          <label for="name" class="entry-checker__label">name</label>
+        </div>
+      </div>
+
+      <div class="entry-checker">
+        <input required type="email" name="" placeholder=" " id="register-email" class="entry-checker__input">
+        <label class="entry-checker__label" for="register-email">email</label>
+      </div>
+
+      <div class="entry-checker">
+        <input required type="password" name="" placeholder=" " id="register-password" class="entry-checker__input">
+        <label class="entry-checker__label" for="register-password">password</label>
+      </div>
+   
+      <div class="entries-container">
+        <select name="" id="domain" class="options-checker" onchange="toggleDomainEntry(this.value)">
+          <option value="">Domain</option>
+          <option value="">Programming</option>
+          <option value="">Design</option>
+          <option value="other">other</option>
+        </select>
+
+        <select name="" id="domain" class="options-checker">
+          <option value="">Begginer</option>
+          <option value="">Intermediate</option>
+          <option value="">Professional</option>
+        </select>
+
+        
+      </div>
+
+      <div class="entries-container">
+        <div class="entry-checker" id="domain-entry">
+          <input type="text" name="" placeholder=" " id="domain-input" class="entry-checker__input">
+          <label class="entry-checker__label" for="domain-input">Domain</label>
+        </div>
+
+        <button class="submit-btn">Register</button>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="assets/images/register-background.jpg" alt="" width="100%" class="img">
+    </div>
+
+
   </form>
 </body>
 </html>
