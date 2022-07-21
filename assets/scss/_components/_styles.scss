@@ -3,6 +3,15 @@
   in the whole pages
 */
 
+
+@import "./reset";
+@import "./colors";
+
+%custom-radius {
+  border-radius: 2.5px;
+  border-bottom-right-radius: 25px;
+}
+
 .entry-checker {
   position: relative;
 

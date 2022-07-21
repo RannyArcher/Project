@@ -1,0 +1,49 @@
+.menu {
+  user-select: none;
+  display: flex;
+  flex-flow: nowrap column;
+  width: 200px;
+  background-color: var(--light-gray);
+  margin-top: 15px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  @extend %custom-radius;
+  overflow: hidden;
+  transform-origin: top right;
+  transform: scale(0);
+  transition: .25s ease-in-out;
+
+  &__item {
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      background-color: transparentize($color: #000000, $amount: .9);
+    }
+  }
+
+  &__checkbox + &__name::after {
+    content: "(off)";
+    color: var(--dark-red);
+    font-size: .75rem;
+    margin-left: 5px;
+  }
+
+  &__checkbox:checked + &__name::after {
+    content: "(on)";
+    color: var(--dark-green);
+    font-size: .75rem;
+    margin-left: 5px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 10px;
+  }
+}
