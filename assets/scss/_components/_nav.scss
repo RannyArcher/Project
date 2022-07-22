@@ -1,12 +1,12 @@
 .nav {
+  border-bottom: solid 2px var(--light-gray);
   display: flex;
   flex-flow: nowrap row;
   justify-content: space-between;
   align-items: center;
   padding: 0 5%;
   gap: 20px;
-  background-color: var(--light-gray);
-  box-shadow: 0 0 10px transparentize($color: black, $amount: 0.75);
+  background-color: var(--white);
 
   @media all and (max-width: 600px) {
     justify-content: center;
@@ -46,7 +46,7 @@
       padding: .5rem .25rem;
       border: transparent;
       border-radius: 25px;
-      background-color: transparentize($color: white, $amount: 0.25);
+      background-color: var(--light-gray);
       padding-left: 2.5rem;
     }
 
@@ -73,7 +73,7 @@
     @extend %custom-radius;
 
     &--active {
-      background-color: transparentize($color: #000000, $amount: .9)
+      background-color: var(--light-gray);
     }
 
     &:last-child::before {
@@ -84,7 +84,7 @@
       transform: translateY(-50%);
       width: 2px;
       height: 75%;
-      background-color: var(--dark-gray);
+      background-color: var(--light-gray);
       border-radius: 25px;
     }
   }
@@ -113,7 +113,7 @@
     transform: translateX(-50%);
     width: 60%;
     height: 2px;
-    background-color: var(--dark-gray);
+    background-color: var(--light-gray);
     border-radius: 10px;
   }
 }
