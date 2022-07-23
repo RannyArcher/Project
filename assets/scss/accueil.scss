@@ -5,37 +5,99 @@
 
 body {
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 
 // main layout
 main {
+  width: 100%;
   padding: 0 clamp(10px, 5%, 25px);
   display: grid;
-  grid-template-columns: clamp(200px, 20%, 250px) 1fr clamp(200px, 20%, 250px);
+  grid-template-columns: clamp(200px, 20%, 250px) minmax(500px, 70%) 200px;
   gap: 25px;
-  margin-top: 25px;
 }
+
 
 .sidebar {
   max-height: 80vh;
-  overflow: auto;
   padding: 1rem;
   position: sticky;
   top: calc(72px + 10px); /* 72px: nav + border ..... 10px: gap */
-  border: 2px solid transparent;
-
-  &:first-child {
-    border-right-color: var(--light-gray);
-  }
-
-  &:last-child {
-    border-left-color: var(--light-gray);
-  }
 }
 
 .suggestions {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: auto;
+  border-right: 2px solid var(--light-gray);
+}
+
+.workspace {
+  border-left: 2px solid var(--light-gray);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+
+.stories {
+  display: flex;
+  align-items: flex-start;
+  overflow: auto;
+  gap: 25px;
+  padding-right: 10px;
+  height: 100px;
+  overflow: auto;
+  border-radius: 10px;
+  border: 2px solid var(--light-gray);
+}
+
+.story {
+  position: relative;
+  flex: 0 0 70px;
+  width: 70px;
+  height: 90%;
+  overflow: hidden;
+  border: 2px solid var(--light-gray);
+  border-top: none;
+  border-radius: custom-radius($otherCorners: 0);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s ease-in-out;
+  }
+  &:hover::after {
+    opacity: .5;
+  }
+
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__add {
+    height: 100%;
+    display: flex;
+    flex: 0 0 60px;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid var(--light-gray);
+    border-radius: custom-radius($otherCorners: 0, $bottomLeftCorner: 0);
+  }
+
 }
