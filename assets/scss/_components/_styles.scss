@@ -7,9 +7,29 @@
 @import "./reset";
 @import "./colors";
 
-%custom-radius {
-  border-radius: 2.5px;
-  border-bottom-right-radius: 25px;
+.title-sep {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > :first-child {
+    font-weight: bold;
+  }
+
+  & > :last-child {
+    font-size: .75rem;
+    font-weight: bold;
+    color: var(--dark-pink);
+    transition: .2s ease-in-out;
+
+    &:hover {
+       color: var(--light-pink);
+    }
+  }
+}
+
+@function custom-radius($bottomRightCorner: 30px, $bottomLeftCorner: 10px, $otherCorners: 5px) {
+  @return $otherCorners $otherCorners $bottomRightCorner $bottomLeftCorner;
 }
 
 .entry-checker {

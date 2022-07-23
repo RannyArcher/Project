@@ -9,7 +9,7 @@
   position: absolute;
   top: 100%;
   right: 0;
-  @extend %custom-radius;
+  border-radius: custom-radius();
   overflow: hidden;
   transform-origin: top right;
   transform: scale(0);
