@@ -19,6 +19,12 @@
   margin: 0;
 }
 
+input, textarea {
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
 .material-icons {
   user-select: none;
 }
