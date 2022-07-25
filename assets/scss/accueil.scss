@@ -16,8 +16,37 @@ main {
   width: 100%;
   padding: 0 clamp(10px, 5%, 25px);
   display: grid;
-  grid-template-columns: clamp(200px, 20%, 250px) minmax(500px, 70%) 200px;
+  grid-template-columns: 250px minmax(0, calc(100% - 250px - 200px)) 200px;
   gap: 25px;
+
+  @media all and (max-width: 950px) {
+    grid-template-columns: 200px minmax(0, calc(100% - 250px));
+
+    .workspace {
+      display: none;
+    }
+
+    @at-root {
+      .nav__link--workspace {
+        display: flex;
+      }
+    }
+  }
+
+  @media all and (max-width: 700px) {
+    grid-template-columns: 100%;
+
+    .suggestions {
+      display: none;
+    }
+
+    @at-root {
+      .nav__link--suggestions {
+        display: flex;
+      }
+    }
+  }
+
 }
 
 
@@ -44,6 +73,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  padding-bottom: 25px;
 }
 
 
@@ -98,6 +128,401 @@ main {
     align-items: center;
     border-right: 2px solid var(--light-gray);
     border-radius: custom-radius($otherCorners: 0, $bottomLeftCorner: 0);
+  }
+
+}
+
+
+
+.create-post {
+  position: relative;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--simple-radius);
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+
+  &__send {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+    transform: translateY(50%);
+    @extend %pink-btn;
+  }
+
+  &__user-image {
+    height: 120px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: custom-radius($otherCorners: 0, $bottomRightCorner: 50px);
+    border-top-left-radius: inherit;
+  }
+
+  &__input {
+    flex: 1 1;
+    width: 100%;
+    padding-right: 25px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    align-self: flex-start;
+
+    &::placeholder {
+      font-size: x-large;
+    }
+
+    /*
+      when the input is empty
+      apply the styles for
+      send button
+    */
+    &:placeholder-shown + .create-post__send {
+      transform: translateY(50%) scale(0);
+    }
+
+  }
+
+  &__medias {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  &__media {
+    background-color: var(--dark-gray);
+    width:  25px;
+    height: 25px;
+  }
+}
+
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post {
+  width: clamp(0px, 100%, 650px);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--simple-radius);
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    gap: 10px;
+  }
+  &__menu {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    position: relative;
+
+    label {
+      cursor: pointer;
+    }
+
+    .menu {
+      top: 100%;
+      right: 100%;
+    }
+
+    #user-menu:checked + .menu {
+      transform: scale(1);
+    }
+  }
+
+  &__user-info {
+    flex: 1 1 auto;
+  }
+  &__user-image {
+    height: 80px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: custom-radius($bottomLeftCorner: 0, $otherCorners: 0, $bottomRightCorner: 50px);
+  }
+  &__user-name {
+    font-weight: bold;
+    font-size: large;
+  }
+  &__user-career,
+  &__user-level {
+    color: var(--dark-gray);
+    font-size: smaller;
+  }
+
+  &__text {
+    padding: 10px;
+  }
+  &__image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  &__reactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  &__reaction {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    * {
+      color: var(--dark-gray)
+    }
+
+    &--liked > * {
+      color: var(--dark-pink)
+    }
+  }
+}
+
+
+.bars {
+  display: flex;
+  gap: 25px;
+  
+  .bar {
+    width: 20px;
+    height: 50px;
+    background-color: var(--light-gray);
+  }
+}
+
+
+.comments, .reviews {
+  display: none;
+  flex-direction: column;
+  border: 2px solid var(--light-gray);
+  border-radius: custom-radius();
+  width: clamp(0px, 100%, 400px);
+
+  &--active {
+    display: flex;
+  }
+
+  &__header {
+    padding: 10px;
+    border-bottom: 2px solid var(--light-gray);
+  }
+}
+
+.review {
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  
+  &__user-image-container {
+    flex: 0 0 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__user-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__user-name {
+    font-weight: bold;
+    font-size: small;
+  }
+
+  &__text {
+    font-size: small;
+  }
+
+  & + & {
+    border-top: 2px solid var(--light-gray);
+  }
+}
+
+
+.add-comment {
+  position: relative;
+  padding: 10px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  border-top: 2px solid var(--light-gray);
+
+  &__user-image-container {
+    flex: 0 0 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__user-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__input {
+    flex: 1 1;
+    width: 100%;
+    overflow: auto;
+    height: max-content;
+    resize: none;
+    border: none;
+    background-color: transparent;
+
+    /*
+      the following styles will
+      be applied to send button 
+      when the textarea input
+      will be empty
+    */
+    &:placeholder-shown + .add-comment__send {
+      transform: translateY(50%) scale(0);
+    }
+  }
+
+  &__send {
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+    transform: translateY(50%);
+    @extend %pink-btn;
+  }
+}
+
+.comment {
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  &__user-image-container {
+    flex: 0 0 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__user-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-radius: custom-radius();
+    flex: 1 1 auto;
+    position: relative;
+  }
+
+  &__content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__user-name {
+    font-weight: bold;
+    font-size: small;
+  }
+
+  &__text {
+    font-size: small;
+  }
+
+  &__menu {
+    position: relative;
+    
+    .material-icons {
+      cursor: pointer;
+    }
+  }
+
+  /* drop down menu configurations */
+  .menu {
+    z-index: 1;
+    top: 100%;
+    right: 100%;
+    width: 150px;
+
+    &__item {
+      padding: 10px;
+    }
+  }
+
+  /*
+    show comment menu if the
+    checkbox input is checked
+  */
+  #comment-menu:checked + .menu {
+    transform: scale(1);
+  }
+
+
+  &__reactions {
+    background-color: var(--light-gray);
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    transform: translateY(50%);
+    padding: 0 5px;
+    border-radius: var(--simple-radius);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--white);
+  }
+
+  &__reaction {
+    border: none;
+    text-transform: capitalize;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    gap: 2.5px;
+
+    & > * {
+      color: var(--dark-gray);
+      font-weight: bold;
+      font-size: .75rem;
+
+    }
+    &::after {
+      content: attr(data-number);
+      color: var(--dark-gray);
+      font-size: .75rem;
+    }
+
+    &--liked > .material-icons {
+      color: var(--light-pink);
+      transition: .2s ease-in-out;
+
+      &:hover {
+        color: var(--dark-pink)
+      }
+    }
   }
 
 }

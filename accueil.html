@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/accueil.css">
+  <script src="/assets/js/accueil.js" defer></script>
   <title>Accueil</title>
 </head>
 
@@ -34,6 +35,14 @@
 
       <a href="#" class="nav__link">
         <div class="material-icons">notifications</div>
+      </a>
+
+      <a href="#" class="nav__link nav__link--workspace">
+        <div class="material-icons">workspace</div>
+      </a>
+
+      <a href="#" class="nav__link nav__link--suggestions">
+        <div class="material-icons">suggestions</div>
       </a>
 
       <div class="v-sep"></div>
@@ -109,6 +118,162 @@
           <img class="story__image" src="/assets/images/girl.jpg" alt="">
         </a>
       </div>
+
+      <form action="" method="" class="create-post">
+        <img src="/assets/images/girl.jpg" alt="" class="create-post__user-image">
+        <textarea required class="create-post__input" placeholder="What's On Your Mind ? ...."></textarea>
+        <button class="create-post__send">Post</button>
+
+        <div class="create-post__medias">
+          <a href="#" class="create-post__media">
+            <div class="material-icons">f</div>
+          </a>
+          <a href="#" class="create-post__media">
+            <div class="material-icons">v</div>
+          </a>
+          <a href="#" class="create-post__media">
+            <div class="material-icons">d</div>
+          </a>
+        </div>
+
+      </form>
+
+      <article>
+        <div class="post">
+          <div class="post__header">
+            <img src="/assets/images/girl.jpg" width="100" alt="" class="post__user-image">
+            <div class="post__user-info">
+              <a href="#" class="post__user-name">jessica archero</a>
+              <div class="post__user-career">full stack webdev</div>
+              <div class="post__user-level">expert</div>
+            </div>
+            <div class="post__menu">
+              <label class="material-icons" for="user-menu">menu</label>
+              <input type="checkbox" name="" id="user-menu" hidden>
+              <div class="menu">
+                <a href="#" class="menu__item">
+                  <div class="menu__name">Block</div>
+                  <div class="menu__icon material-icons">menu</div>
+                </a>
+                <a href="#" class="menu__item">
+                  <div class="menu__name">Report</div>
+                  <div class="menu__icon material-icons">menu</div>
+                </a>
+                <a href="#" class="menu__item">
+                  <div class="menu__name">Follow</div>
+                  <div class="menu__icon material-icons">menu</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="post__body">
+            <div class="post__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam aliquid
+              nisi fugiat, asperiores incidunt alias inventore, animi temporibus voluptate accusantium cumque eaque.
+            </div>
+            <img src="/assets/images/hacker-background.jpg" alt="" class="post__image">
+          </div>
+          <div class="post__reactions">
+            <button class="post__reaction post__reaction--liked">
+              <div class="material-icons">like</div>
+              <div class="reaction__number">32</div>
+            </button>
+            <button class="post__reaction" onclick="showComments()">
+              <div class="material-icons">comments</div>
+              <div class="reaction__number">15</div>
+            </button>
+            <button class="post__reaction" onclick="showReviews()">
+              <div class="material-icons">reviews</div>
+              <div class="reaction__number">4</div>
+            </button>
+            <button class="post__reaction">
+              <div class="material-icons">share</div>
+              <div class="reaction__number">13</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="bars">
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+
+        <div class="comments comments--active" data-comments>
+          <div class="comments__header title-sep">
+            <div class="comment__title">Comments</div>
+            <a href="#">show all</a>
+          </div>
+
+          <div class="comment">
+            <a href="#" class="comment__user-image-container">
+              <img src="/assets/images/girl.jpg" class="comment__user-image" alt="">
+            </a>
+            <div class="comment__content">
+              <div class="comment__reactions">
+                <button class="comment__reaction comment__reaction--liked" data-number="2">
+                  <div class="material-icons">like</div>
+                </button>
+                <button class="comment__reaction" data-number="1">
+                  <div class="material-icons">reply</div>
+                </button>
+              </div>
+              <div class="comment__content-header">
+                <a href="#" class="comment__user-name">Jessica Archero</a>
+                <div class="comment__menu">
+                  <label class="material-icons" for="comment-menu">...</label>
+                  <input type="checkbox" name="" id="comment-menu" hidden>
+                  <div class="menu">
+                    <a href="#" class="menu__item">
+                      <div class="menu__name">Block</div>
+                      <div class="menu__icon material-icons">menu</div>
+                    </a>
+                    <a href="#" class="menu__item">
+                      <div class="menu__name">Report</div>
+                      <div class="menu__icon material-icons">menu</div>
+                    </a>
+                    <a href="#" class="menu__item">
+                      <div class="menu__name">Delete</div>
+                      <div class="menu__icon material-icons">menu</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="comment__text">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, beatae!
+              </div>
+            </div>
+          </div>
+
+          <form class="add-comment">
+            <a href="#" class="add-comment__user-image-container">
+              <img src="/assets/images/girl.jpg" alt="" class="add-comment__user-image">
+            </a>
+            <textarea placeholder="Write a Comment ...." name="" class="add-comment__input"></textarea>
+            <button class="add-comment__send">Send</button>
+          </form>
+
+        </div>
+
+        <div class="reviews" data-reviews>
+          <div class="title-sep reviews__header">
+            <div class="reviews__title">Reviews</div>
+            <a href="#">see all</a>
+          </div>
+
+          <div class="review">
+            <a href="#" class="review__user-image-container">
+              <img src="/assets/images/girl.jpg" alt="" class="review__user-image">
+            </a>
+            <div class="review__text">
+              <a href="#" class="review__user-name">Jessica Archero</a>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quod dignissimos perspiciatis?
+            </div>
+          </div>
+
+
+        </div>
+
+      </article>
 
     </div>
 
