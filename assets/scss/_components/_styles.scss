@@ -7,6 +7,20 @@
 @import "./reset";
 @import "./variables";
 
+%pink-btn {
+  background-color: var(--dark-pink);
+  color: var(--white);
+  border: none;
+  padding: 5px 25px;
+  cursor: pointer;
+  border-radius: var(--simple-radius);
+  transition: .2s ease-in-out;
+
+  &:hover {
+    background-color: var(--light-pink);
+  }
+}
+
 .title-sep {
   display: flex;
   justify-content: space-between;
