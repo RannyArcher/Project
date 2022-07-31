@@ -7,6 +7,16 @@
 @import "./reset";
 @import "./variables";
 
+
+@mixin hiddenScrollbar {
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 %pink-btn {
   background-color: var(--dark-pink);
   color: var(--white);
