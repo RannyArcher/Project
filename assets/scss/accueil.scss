@@ -67,6 +67,29 @@ main {
 
 .workspace {
   border-left: 2px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    color: var(--dark-pink);
+    transition: .2s ease-in-out;
+
+    &:hover {
+      color: var(--light-pink);
+      gap: 10px;
+    }
+
+    &::before {
+      content: attr(data-icon);
+      font-family: "Material Icons";
+      color: currentColor;
+    }
+  }
 }
 
 .posts {
@@ -99,8 +122,24 @@ main {
   border-top: none;
   border-radius: custom-radius($otherCorners: 0);
 
+  &__add {
+    color: var(--dark-gray);
+    transition: .2s ease-in-out;
+
+    &:hover {
+      background-color: var(--dark-pink);
+      color: var(--white);
+    }
+  }
+
   &::after {
-    content: "";
+    content: "visibility";
+    font-family: "Material Icons";
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
     position: absolute;
     top: 0;
     left: 0;
@@ -121,6 +160,7 @@ main {
   }
 
   &__add {
+    font-size: 2rem;
     height: 100%;
     display: flex;
     flex: 0 0 60px;
@@ -160,6 +200,7 @@ main {
   }
 
   &__input {
+    @include hiddenScrollbar;
     flex: 1 1;
     width: 100%;
     padding-right: 25px;
@@ -198,9 +239,15 @@ main {
   }
 
   &__media {
-    background-color: var(--dark-gray);
+    background-color: var(--white);
     width:  25px;
     height: 25px;
+    color: var(--dark-gray);
+    transition: .2s ease-in-out;
+
+    &:hover {
+      color: var(--black);
+    }
   }
 }
 
@@ -213,6 +260,8 @@ article {
 .post {
   width: clamp(0px, 100%, 650px);
   display: flex;
+  gap: 10px;
+  padding-bottom: 5px;;
   flex-direction: column;
   border: 2px solid var(--light-gray);
   border-radius: var(--simple-radius);
@@ -222,6 +271,7 @@ article {
     display: flex;
     gap: 10px;
   }
+
   &__menu {
     align-self: center;
     display: flex;
@@ -263,8 +313,15 @@ article {
     font-size: smaller;
   }
 
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
   &__text {
-    padding: 10px;
+    padding: 0 10px;
   }
   &__image {
     width: 100%;
