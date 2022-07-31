@@ -13,7 +13,7 @@
 <body>
 
   <nav class="nav">
-    <div style="gap: 25px">
+    <div class="nav__search-container">
       <a href="#" class="nav__logo">
         <img src="" alt="logo">
       </a>
@@ -24,28 +24,27 @@
       </form>
     </div>
 
-    <div>
-      <a href="#" class="nav__link nav__link--active">
-        <div class="material-icons">home</div>
+    <div class="nav__links">
+      <a href="#" class="nav__link nav__link--active material-icons">
+        home
       </a>
 
-      <a href="#" class="nav__link">
-        <div class="material-icons">chat_bubble</div>
+      <a href="#" class="nav__link material-icons">
+        chat_bubble
       </a>
 
-      <a href="#" class="nav__link">
-        <div class="material-icons">notifications</div>
+      <a href="#" class="nav__link material-icons">
+        notifications
       </a>
 
-      <a href="#" class="nav__link nav__link--workspace">
-        <div class="material-icons">workspace</div>
+      <a href="#" class="nav__link nav__link--workspace material-icons">
+        workspaces
       </a>
 
-      <a href="#" class="nav__link nav__link--suggestions">
-        <div class="material-icons">suggestions</div>
+      <a href="#" class="nav__link nav__link--suggestions material-icons">
+        person_add
       </a>
 
-      <div class="v-sep"></div>
 
       <div class="nav__drop-down nav__link">
 
@@ -93,13 +92,13 @@
 
           <div class="user-presentation__contact">
             <a href="#">
-              <div class="material-icons">+</div>
+              <div class="material-icons">person_add</div>
             </a>
             <a href="#">
-              <div class="material-icons">M</div>
+              <div class="material-icons">message</div>
             </a>
             <a href="#">
-              <div class="material-icons">i</div>
+              <div class="material-icons">info</div>
             </a>
           </div>
 
@@ -113,7 +112,7 @@
     <div class="posts">
 
       <div class="stories">
-        <a href="#" class="story__add"><span>+</span></a>
+        <a href="#" class="story__add material-icons">add_circle</a>
         <a href="#" class="story">
           <img class="story__image" src="/assets/images/girl.jpg" alt="">
         </a>
@@ -125,14 +124,14 @@
         <button class="create-post__send">Post</button>
 
         <div class="create-post__medias">
-          <a href="#" class="create-post__media">
-            <div class="material-icons">f</div>
+          <a href="#" class="material-icons create-post__media">
+            image
           </a>
-          <a href="#" class="create-post__media">
-            <div class="material-icons">v</div>
+          <a href="#" class="material-icons create-post__media">
+            videocam
           </a>
-          <a href="#" class="create-post__media">
-            <div class="material-icons">d</div>
+          <a href="#" class="material-icons create-post__media">
+            description
           </a>
         </div>
 
@@ -153,15 +152,15 @@
               <div class="menu">
                 <a href="#" class="menu__item">
                   <div class="menu__name">Block</div>
-                  <div class="menu__icon material-icons">menu</div>
+                  <div class="menu__icon material-icons">block</div>
                 </a>
                 <a href="#" class="menu__item">
                   <div class="menu__name">Report</div>
-                  <div class="menu__icon material-icons">menu</div>
+                  <div class="menu__icon material-icons">report</div>
                 </a>
                 <a href="#" class="menu__item">
                   <div class="menu__name">Follow</div>
-                  <div class="menu__icon material-icons">menu</div>
+                  <div class="menu__icon material-icons">favorite</div>
                 </a>
               </div>
             </div>
@@ -174,11 +173,11 @@
           </div>
           <div class="post__reactions">
             <button class="post__reaction post__reaction--liked">
-              <div class="material-icons">like</div>
+              <div class="material-icons">thumb_up</div>
               <div class="reaction__number">32</div>
             </button>
             <button class="post__reaction" onclick="showComments()">
-              <div class="material-icons">comments</div>
+              <div class="material-icons">comment</div>
               <div class="reaction__number">15</div>
             </button>
             <button class="post__reaction" onclick="showReviews()">
@@ -211,7 +210,7 @@
             <div class="comment__content">
               <div class="comment__reactions">
                 <button class="comment__reaction comment__reaction--liked" data-number="2">
-                  <div class="material-icons">like</div>
+                  <div class="material-icons">thumb_up</div>
                 </button>
                 <button class="comment__reaction" data-number="1">
                   <div class="material-icons">reply</div>
@@ -277,7 +276,12 @@
 
     </div>
 
-    <div class="sidebar workspace"></div>
+    <div class="sidebar workspace">
+      <a href="#" class="workspace__link" data-icon="group_add">Follows</a>
+      <a href="#" class="workspace__link" data-icon="handshake">Collaborators</a>
+      <a href="#" class="workspace__link" data-icon="group">Groups</a>
+      <a href="#" class="workspace__link" data-icon="workspaces">Workspace</a>
+    </div>
 
   </main>
 
