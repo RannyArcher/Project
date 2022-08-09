@@ -13,3 +13,31 @@ function showReviews() {
   comments.classList.remove(COMMENTS_ACTIVE_CLASS) // set comments to inactive
   reviews.classList.add(REVIEWS_ACTIVE_CLASS) // set reviews to active
 }
+
+
+
+// dark mode
+let themeToggleBtn = document.querySelector("[data-themeToggleBtn]")
+let html = document.querySelector(":root")
+
+/*
+  set the theme according to localStorage
+*/
+let userTheme = localStorage.getItem("theme")
+
+html.dataset["theme"] = (userTheme ?? "light")
+
+themeToggleBtn.checked = (userTheme == "dark")
+
+// listen to theme btn
+themeToggleBtn.addEventListener("click", function () {
+  if (this.checked) {
+    html.dataset["theme"] = "dark"
+
+    localStorage.setItem("theme", "dark")
+    return
+  }
+
+  html.dataset["theme"] = "light"
+  localStorage.setItem("theme", "light")
+})
