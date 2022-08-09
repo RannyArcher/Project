@@ -2,14 +2,14 @@
   position: sticky;
   z-index: 10;
   top: 0;
-  border-bottom: solid 2px var(--secondary-light);
+  border-bottom: solid 2px var(--secondary);
   display: flex;
   flex-flow: nowrap row;
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(10px, 5%, 25px);
   gap: 20px;
-  background-color: var(--background-color);
+  background-color: var(--background);
 
   @media all and (max-width: 700px) {
     justify-content: center;
@@ -45,8 +45,14 @@
       padding: .5rem .25rem;
       border: transparent;
       border-radius: 25px;
-      background-color: var(--secondary-light);
+      color: var(--neutral);
+      background-color: var(--accent);
       padding: .5rem 1rem .5rem 2.25rem;
+
+      &::placeholder {
+        // color: var(--);
+        // opacity: 1;
+      }
     }
 
     .material-icons {
@@ -55,7 +61,8 @@
       top: 50%;
       left: .5rem;
       transform: translateY(-50%);
-      color: var(--secondary-dark);
+      color: var(--neutral);
+      opacity: .25;
     }
   }
 
@@ -79,7 +86,7 @@
     border-radius: custom-radius($otherCorners: 0px );
 
     &--active {
-      background-color: var(--secondary-light);
+      background-color: var(--accent);
     }
 
     &--workspace, &--suggestions {
@@ -94,7 +101,7 @@
       transform: translateY(-50%);
       width: 2px;
       height: 75%;
-      background-color: var(--secondary-light);
+      background-color: var(--secondary);
       border-radius: 25px;
     }
   }
@@ -128,7 +135,7 @@
       transform: translateX(-50%);
       width: 60%;
       height: 2px;
-      background-color: var(--secondary-light);
+      background-color: var(--secondary);
       border-radius: var(--simple-radius);
     }
   }

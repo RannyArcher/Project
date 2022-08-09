@@ -4,7 +4,7 @@
 @import "./_components/user-presentation";
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -62,11 +62,11 @@ main {
   flex-direction: column;
   gap: 10px;
   overflow: auto;
-  border-right: 2px solid var(--secondary-light);
+  border-right: 2px solid var(--secondary);
 }
 
 .workspace {
-  border-left: 2px solid var(--secondary-light);
+  border-left: 2px solid var(--secondary);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -76,13 +76,8 @@ main {
     align-items: center;
     gap: 15px;
     font-weight: bold;
-    color: var(--primary-dark);
+    color: var(--primary);
     transition: .2s ease-in-out;
-
-    &:hover {
-      color: var(--primary-light);
-      gap: 10px;
-    }
 
     &::before {
       content: attr(data-icon);
@@ -109,7 +104,7 @@ main {
   height: 100px;
   overflow: auto;
   border-radius: 10px;
-  border: 2px solid var(--secondary-light);
+  border: 2px solid var(--secondary);
 }
 
 .story {
@@ -118,17 +113,17 @@ main {
   width: 70px;
   height: 90%;
   overflow: hidden;
-  border: 2px solid var(--secondary-light);
+  border: 2px solid var(--secondary);
   border-top: none;
   border-radius: custom-radius($otherCorners: 0);
 
   &__add {
-    color: var(--secondary-dark);
+    color: var(--secondary);
     transition: .2s ease-in-out;
 
     &:hover {
-      background-color: var(--primary-dark);
-      color: var(--background-color);
+      background-color: var(--primary);
+      color: var(--background);
     }
   }
 
@@ -139,7 +134,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--background-color);
+    color: var(--background);
     position: absolute;
     top: 0;
     left: 0;
@@ -166,7 +161,7 @@ main {
     flex: 0 0 60px;
     justify-content: center;
     align-items: center;
-    border-right: 2px solid var(--secondary-light);
+    border-right: 2px solid var(--secondary);
     border-radius: custom-radius($otherCorners: 0, $bottomLeftCorner: 0);
   }
 
@@ -176,7 +171,7 @@ main {
 
 .create-post {
   position: relative;
-  border: 2px solid var(--secondary-light);
+  border: 2px solid var(--secondary);
   border-radius: var(--simple-radius);
   display: flex;
   gap: 10px;
@@ -239,10 +234,10 @@ main {
   }
 
   &__media {
-    background-color: var(--background-color);
+    background-color: var(--background);
     width:  25px;
     height: 25px;
-    color: var(--secondary-dark);
+    color: var(--secondary);
     transition: .2s ease-in-out;
 
     &:hover {
@@ -263,7 +258,7 @@ article {
   gap: 10px;
   padding-bottom: 5px;;
   flex-direction: column;
-  border: 2px solid var(--secondary-light);
+  border: 2px solid var(--secondary);
   border-radius: var(--simple-radius);
   overflow: hidden;
 
@@ -304,13 +299,14 @@ article {
     border-radius: custom-radius($bottomLeftCorner: 0, $otherCorners: 0, $bottomRightCorner: 50px);
   }
   &__user-name {
+    color: var(--primary);
     font-weight: bold;
     font-size: large;
   }
   &__user-career,
   &__user-level {
-    color: var(--secondary-dark);
     font-size: smaller;
+    font-weight: light;
   }
 
 
@@ -346,7 +342,7 @@ article {
     }
 
     &--liked > * {
-      color: var(--primary-dark)
+      color: var(--primary)
     }
   }
 }
@@ -359,7 +355,7 @@ article {
   .bar {
     width: 20px;
     height: 50px;
-    background-color: var(--secondary-light);
+    background-color: var(--secondary);
   }
 }
 
@@ -367,7 +363,7 @@ article {
 .comments, .reviews {
   display: none;
   flex-direction: column;
-  border: 2px solid var(--secondary-light);
+  border: 2px solid var(--secondary);
   border-radius: custom-radius();
   width: clamp(0px, 100%, 400px);
 
@@ -377,7 +373,7 @@ article {
 
   &__header {
     padding: 10px;
-    border-bottom: 2px solid var(--secondary-light);
+    border-bottom: 2px solid var(--secondary);
   }
 }
 
@@ -401,6 +397,7 @@ article {
   }
 
   &__user-name {
+    color: var(--primary);
     font-weight: bold;
     font-size: small;
   }
@@ -410,7 +407,7 @@ article {
   }
 
   & + & {
-    border-top: 2px solid var(--secondary-light);
+    border-top: 2px solid var(--secondary);
   }
 }
 
@@ -422,7 +419,7 @@ article {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  border-top: 2px solid var(--secondary-light);
+  border-top: 2px solid var(--secondary);
 
   &__user-image-container {
     flex: 0 0 50px;
@@ -487,7 +484,7 @@ article {
   }
 
   &__content {
-    background-color: var(--secondary-light);
+    background-color: var(--accent);
     padding: 10px;
     border-radius: custom-radius();
     flex: 1 1 auto;
@@ -501,6 +498,7 @@ article {
   }
 
   &__user-name {
+    color: var(--primary);
     font-weight: bold;
     font-size: small;
   }
@@ -539,7 +537,7 @@ article {
 
 
   &__reactions {
-    background-color: var(--secondary-light);
+    background-color: var(--accent);
     position: absolute;
     bottom: 0;
     right: 30px;
@@ -549,7 +547,7 @@ article {
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--background);
   }
 
   &__reaction {
@@ -572,12 +570,8 @@ article {
     }
 
     &--liked > .material-icons {
-      color: var(--primary-light);
+      color: var(--primary);
       transition: .2s ease-in-out;
-
-      &:hover {
-        color: var(--primary-dark)
-      }
     }
   }
 

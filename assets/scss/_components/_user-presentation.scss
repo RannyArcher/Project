@@ -1,5 +1,5 @@
 .user-presentation {
-  border: 2px solid var(--secondary-light);
+  border: 2px solid var(--secondary);
   flex-shrink: 0;
   width: 100%;
   border-radius: var(--simple-radius);
@@ -31,13 +31,9 @@
   }
 
   &__name {
-    color: var(--primary-dark);
+    color: var(--primary);
     font-weight: bold;
     font-size: large;
   }
 
-  &__career {
-    color: var(--secondary-dark);
-    font-size: small;
-  }
 }
