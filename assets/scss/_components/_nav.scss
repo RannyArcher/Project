@@ -2,14 +2,14 @@
   position: sticky;
   z-index: 10;
   top: 0;
-  border-bottom: solid 2px var(--light-gray);
+  border-bottom: solid 2px var(--secondary-light);
   display: flex;
   flex-flow: nowrap row;
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(10px, 5%, 25px);
   gap: 20px;
-  background-color: var(--white);
+  background-color: var(--background-color);
 
   @media all and (max-width: 700px) {
     justify-content: center;
@@ -45,7 +45,7 @@
       padding: .5rem .25rem;
       border: transparent;
       border-radius: 25px;
-      background-color: var(--light-gray);
+      background-color: var(--secondary-light);
       padding: .5rem 1rem .5rem 2.25rem;
     }
 
@@ -55,7 +55,7 @@
       top: 50%;
       left: .5rem;
       transform: translateY(-50%);
-      color: var(--dark-gray);
+      color: var(--secondary-dark);
     }
   }
 
@@ -79,7 +79,7 @@
     border-radius: custom-radius($otherCorners: 0px );
 
     &--active {
-      background-color: var(--light-gray);
+      background-color: var(--secondary-light);
     }
 
     &--workspace, &--suggestions {
@@ -94,7 +94,7 @@
       transform: translateY(-50%);
       width: 2px;
       height: 75%;
-      background-color: var(--light-gray);
+      background-color: var(--secondary-light);
       border-radius: 25px;
     }
   }
@@ -128,7 +128,7 @@
       transform: translateX(-50%);
       width: 60%;
       height: 2px;
-      background-color: var(--light-gray);
+      background-color: var(--secondary-light);
       border-radius: var(--simple-radius);
     }
   }

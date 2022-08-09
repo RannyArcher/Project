@@ -1,17 +1,26 @@
 :root {
-  // colors
-  --black: #01030b;
-  --white: #fdfcfc;
-  --light-gray: #ececec;
-  --dark-gray: #909090;
-  --dark-green: #37b90b;
-  --dark-red: #b60303;
-  --light-pink: #f40057;
-  --dark-pink: #c00043;
 
   // styles
   --simple-radius: 10px;
 
   // shadows
   --shadow-light: 0 0 25px #00000025;
+
+
+
+  // colors
+  --background-color: #fdfcfc;
+
+  --primary-light: #f40057;
+  --primary-dark: #f40057;
+
+  --secondary-light: #ececec;
+  --secondary-dark: #909090;
+
+  --error: #b60303;
+
+  --success: #37b90b;
+
+  --neutral: #01030b;
+
 }

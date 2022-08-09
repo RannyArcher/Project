@@ -18,8 +18,8 @@
 }
 
 %pink-btn {
-  background-color: var(--dark-pink);
-  color: var(--white);
+  background-color: var(--primary-dark);
+  color: var(--background-color);
   border: none;
   padding: 5px 25px;
   cursor: pointer;
@@ -27,7 +27,7 @@
   transition: .2s ease-in-out;
 
   &:hover {
-    background-color: var(--light-pink);
+    background-color: var(--primary-light);
   }
 }
 
@@ -43,11 +43,11 @@
   & > :last-child {
     font-size: .75rem;
     font-weight: bold;
-    color: var(--dark-pink);
+    color: var(--primary-dark);
     transition: .2s ease-in-out;
 
     &:hover {
-       color: var(--light-pink);
+       color: var(--primary-light);
     }
   }
 }
@@ -67,7 +67,7 @@
     top: 50%;
     transform: translateY(-50%);
     margin-left: 5px;
-    color: var(--dark-gray);
+    color: var(--secondary-dark);
     text-transform: capitalize;
     transition: .25s ease-in-out;
   }
@@ -77,13 +77,13 @@
     background-color: transparent;
     padding: 5px;
     border: none;
-    border-bottom: 2px solid var(--dark-gray);
+    border-bottom: 2px solid var(--secondary-dark);
     transition: .25s ease-in-out;
 
     &:focus,
     // when input is not empty
     &:not(:placeholder-shown) {
-      border-color: var(--black);
+      border-color: var(--neutral);
     }
 
     &:focus + label,
@@ -95,9 +95,9 @@
 
     // when input is not empty but it's valid
     &:not(:placeholder-shown):valid {
-      border-color: var(--dark-green);
+      border-color: var(--success-dark);
       & + label {
-        color: var(--dark-green);
+        color: var(--success-dark);
       }
     }
     
@@ -113,7 +113,7 @@
   background-color: transparent;
   padding: 5px;
   border: none;
-  border-bottom: 2px solid var(--dark-gray);
+  border-bottom: 2px solid var(--secondary-dark);
   transition: .25s ease-in-out;
 }
 
@@ -123,13 +123,13 @@
   background-color: transparent;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--dark-gray);
+  border: 1px solid var(--secondary-dark);
   cursor: pointer;
   transition: .25s ease-in-out;
 
   &:hover {
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
+    background-color: var(--neutral);
+    border-color: var(--neutral);
+    color: var(--background-color);
   }
 }

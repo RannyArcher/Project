@@ -1,10 +1,10 @@
 .menu {
-  border: solid 2px var(--light-gray);
+  border: solid 2px var(--secondary-light);
   user-select: none;
   display: flex;
   flex-flow: nowrap column;
   width: 200px;
-  background-color: var(--white);
+  background-color: var(--background-color);
   position: absolute;
   border-radius: custom-radius();
   overflow: hidden;
@@ -19,20 +19,20 @@
     transition: .2s ease-in-out;
 
     &:hover {
-      background-color: var(--light-gray);
+      background-color: var(--secondary-light);
     }
   }
 
   &__checkbox + &__name::after {
     content: "(off)";
-    color: var(--dark-red);
+    color: var(--error);
     font-size: .75rem;
     margin-left: 5px;
   }
 
   &__checkbox:checked + &__name::after {
     content: "(on)";
-    color: var(--dark-green);
+    color: var(--success);
     font-size: .75rem;
     margin-left: 5px;
   }

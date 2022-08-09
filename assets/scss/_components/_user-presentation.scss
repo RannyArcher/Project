@@ -1,5 +1,5 @@
 .user-presentation {
-  border: 2px solid var(--light-gray);
+  border: 2px solid var(--secondary-light);
   flex-shrink: 0;
   width: 100%;
   border-radius: var(--simple-radius);
@@ -17,29 +17,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 10px;
-    height: 100%;
-    width: 50px;
-
-
-    a {
-      border: solid 2px var(--black);
-      flex: 0 0 32px;
-      height: 32px;
-      border-radius: var(--simple-radius);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: .25s ease-in-out;
-
-      &:hover {
-        background-color: var(--black);
-        .material-icons {
-          color: var(--white);
-        }
-      }
-
-    }
+    gap: 25px;
 
   }
 
@@ -53,13 +31,13 @@
   }
 
   &__name {
-    color: var(--dark-pink);
+    color: var(--primary-dark);
     font-weight: bold;
     font-size: large;
   }
 
   &__career {
-    color: var(--dark-gray);
+    color: var(--secondary-dark);
     font-size: small;
   }
 }
