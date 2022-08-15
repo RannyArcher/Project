@@ -1,43 +1,31 @@
-let comments = document.querySelector("[data-comments]"),
-    reviews = document.querySelector("[data-reviews]")
+function _onLoad() {}
 
-const COMMENTS_ACTIVE_CLASS = "comments--active"
-const REVIEWS_ACTIVE_CLASS = "reviews--active"
+document.addEventListener("load", _onLoad);
 
-function showComments() {
-  reviews.classList.remove(REVIEWS_ACTIVE_CLASS) // set reviews to inactive
-  comments.classList.add(COMMENTS_ACTIVE_CLASS) // set comments to active
+const HTML = document.querySelector("html"),
+  HTML_TRANSITION = ["ascendent:!transition-colors", "ascendent:duration-1000"],
+  TRANSITION_DURATION = 1000;
+
+if (localStorage.theme) {
+  HTML.classList.add(...HTML_TRANSITION);
+  HTML.classList.add(localStorage.theme);
+
+  setTimeout(
+    () => HTML.classList.remove(...HTML_TRANSITION),
+    TRANSITION_DURATION + 250
+  );
 }
 
-function showReviews() {
-  comments.classList.remove(COMMENTS_ACTIVE_CLASS) // set comments to inactive
-  reviews.classList.add(REVIEWS_ACTIVE_CLASS) // set reviews to active
+function toggleDark() {
+  HTML.classList.add(...HTML_TRANSITION);
+  HTML.classList.toggle("dark");
+
+  // if the dark theme is selected, put it in the local storage
+  // else put a empty string
+
+  localStorage.setItem("theme", HTML.classList.contains("dark") ? "dark" : "");
+  setTimeout(
+    () => HTML.classList.remove(...HTML_TRANSITION),
+    TRANSITION_DURATION + 250
+  );
 }
-
-
-
-// dark mode
-let themeToggleBtn = document.querySelector("[data-themeToggleBtn]")
-let html = document.querySelector(":root")
-
-/*
-  set the theme according to localStorage
-*/
-let userTheme = localStorage.getItem("theme")
-
-html.dataset["theme"] = (userTheme ?? "light")
-
-themeToggleBtn.checked = (userTheme == "dark")
-
-// listen to theme btn
-themeToggleBtn.addEventListener("click", function () {
-  if (this.checked) {
-    html.dataset["theme"] = "dark"
-
-    localStorage.setItem("theme", "dark")
-    return
-  }
-
-  html.dataset["theme"] = "light"
-  localStorage.setItem("theme", "light")
-})

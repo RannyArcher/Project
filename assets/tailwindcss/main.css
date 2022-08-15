@@ -1,0 +1,28 @@
+@import "https://fonts.googleapis.com/css2?family=Material+Icons";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .material-icons {
+    font-family: "Material Icons";
+  }
+
+  * {
+    @apply text-neutralLight dark:text-neutralDark;
+  }
+}
+
+@layer components {
+  .active-nav-link {
+    @apply text-primaryLight dark:text-primaryDark before:absolute before:w-full before:h-[2px] before:bg-primaryLight dark:before:bg-primaryDark before:bottom-0 before:right-0 before:translate-y-[2px] sm:before:content-none;
+  }
+
+  /* context menu like */
+  .menu {
+    @apply absolute bg-backgroundLight dark:bg-backgroundDark w-[150px] top-[100%] right-[50%] rounded-lg rounded-tr-none border-2 border-secondaryLight dark:border-secondaryDark origin-top-right transition-transform duration-200 text-base
+    
+    /* menu items */
+    children:w-full children-hover:bg-secondaryLight children-hover:bg-opacity-50 children-hover:dark:bg-secondaryDark children:transition-colors children:flex children:justify-between children:items-center children:cursor-pointer children:px-2 children:py-2;
+  }
+}

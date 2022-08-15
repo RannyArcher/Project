@@ -1,288 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="/assets/js/accueil.js" defer></script>
+    <title>Accueil</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/accueil.css">
-  <script src="/assets/js/accueil.js" defer></script>
-  <title>Accueil</title>
-</head>
-
-<body>
-
-  <nav class="nav">
-    <div class="nav__search-container">
-      <a href="#" class="nav__logo">
-        <img src="" alt="logo">
-      </a>
-      <form action="" method="" class="nav__search">
-        <div class="material-icons">search</div>
-        <input type="text" name="" placeholder="Search">
-        <input type="submit" hidden>
-      </form>
-    </div>
-
-    <div class="nav__links">
-      <a href="#" class="nav__link nav__link--active material-icons">
-        home
-      </a>
-
-      <a href="#" class="nav__link material-icons">
-        chat_bubble
-      </a>
-
-      <a href="#" class="nav__link material-icons">
-        notifications
-      </a>
-
-      <a href="#" class="nav__link nav__link--workspace material-icons">
-        workspaces
-      </a>
-
-      <a href="#" class="nav__link nav__link--suggestions material-icons">
-        person_add
-      </a>
-
-
-      <div class="nav__drop-down nav__link">
-
-        <label class="material-icons" for="drop-down-menu">arrow_drop_down</label>
-        <input type="checkbox" hidden id="drop-down-menu">
-
-        <div class="menu">
-          <a href="#" class="menu__item">
-            <div class="menu__name">To Link</div>
-            <div class="menu__icon material-icons">menu</div>
-          </a>
-
-          <label class="menu__item" for="checkbox">
-            <input data-themeToggleBtn type="checkbox" class="menu__checkbox" hidden id="checkbox">
-            <div class="menu__name">Dark Mode</div>
-            <div class="menu__icon material-icons">nightlight</div>
-          </label>
-
-          <a href="#" class="menu__item">
-            <div class="menu__name">Logout</div>
-            <div class="menu__icon material-icons">logout</div>
-          </a>
-
-        </div>
-
-      </div>
-    </div>
-  </nav>
-
-  <main>
-
-    <div class="sidebar suggestions">
-      <div class="title-sep">
-        <b>Suggestions</b>
-        <a href="">See More</a>
+  <body
+    class="flex flex-col gap-6 bg-backgroundLight dark:bg-backgroundDark xl:container xl:mx-auto"
+  >
+    <nav
+      class="sticky top-0 w-full sm:px-[5%] pt-5 sm:py-5 bg-backgroundLight dark:bg-backgroundDark z-10 border-b-2 border-secondaryLight dark:border-secondaryDark flex flex-col sm:flex-row sm:justify-between items-center gap-[20px]"
+    >
+      <div
+        class="inline-flex items-center justify-between gap-[10px] sm:gap-[20px] mx-2.5"
+      >
+        <a href="#"> logo </a>
+        <form action="" method="" class="inline-flex relative items-center">
+          <div
+            class="material-icons text-opacity-50 absolute translate-x-1 pointer-events-none dark:text-opacity-50"
+          >
+            search
+          </div>
+          <input
+            type="text"
+            name=""
+            placeholder="Search"
+            class="placeholder: placeholder:text-opacity-50 dark:placeholder: dark:placeholder:text-opacity-50 bg-secondaryLight dark:bg-secondaryDark rounded-full py-1 pl-[30px] pr-2 w-full"
+          />
+          <input type="submit" hidden />
+        </form>
       </div>
 
-      <div class="user-presentation">
+      <div
+        class="inline-flex shrink max-w-xs w-full justify-between children:cursor-pointer children:inline-flex children:justify-center children:items-center children:p-2 children:text-xl md:children:text-2xl children:relative"
+      >
+        <a href="#" class="active-nav-link material-icons">home</a>
 
-        <img src="/assets/images/girl.jpg" class="user-presentation__image">
+        <a href="#" class="material-icons">chat_bubble</a>
 
-        <div class="user-presentation__info">
-          <a href="#" class="user-presentation__name">jessica archero</a>
-          <div class="user-presentation__contact">
+        <a href="#" class="material-icons">notifications</a>
+
+        <a href="#" class="material-icons">workspaces</a>
+
+        <a href="#" class="material-icons">person_add</a>
+
+        <div>
+          <button
+            class="material-icons"
+            onclick="this.nextElementSibling.classList.toggle('scale-0')"
+          >
+            arrow_drop_down
+          </button>
+
+          <div class="menu scale-0">
             <a href="#">
-              <div class="material-icons">person_add</div>
+              <div>To Link</div>
+              <div class="material-icons">menu</div>
             </a>
+
+            <button onclick="toggleDark()">
+              <div class="">Dark Mode</div>
+              <div class="material-icons" data-themeToggleBtn>nightlight</div>
+            </button>
+
             <a href="#">
-              <div class="material-icons">message</div>
-            </a>
-            <a href="#">
-              <div class="material-icons">info</div>
+              <div>Logout</div>
+              <div class="material-icons">logout</div>
             </a>
           </div>
+        </div>
+      </div>
+    </nav>
 
+    <main
+      class="w-full px-2.5 sm:px-[5%] flex md:justify-between justify-cente gap-5"
+    >
+      <div
+        class="h-screen sticky top-[110px] overscroll-none basis-[200px] hidden md:flex shrink-0 flex-col gap-2.5"
+      >
+        <div class="flex flex-row justify-between items-center">
+          <b>Suggestions</b>
+          <a
+            href="#"
+            class="text-primaryLight dark:text-primaryDark font-bold text-xs"
+            >See More</a
+          >
         </div>
 
-      </div>
+        <div
+          class="w-full border-2 border-secondaryLight dark:border-secondaryDark rounded-xl overflow-hidden"
+        >
+          <img
+            src="/assets/images/girl.jpg"
+            class="object-cover h-[200px] w-full"
+          />
 
-    </div>
-
-
-    <div class="posts">
-
-      <div class="stories">
-        <a href="#" class="story__add material-icons">add_circle</a>
-        <a href="#" class="story">
-          <img class="story__image" src="/assets/images/girl.jpg" alt="">
-        </a>
-      </div>
-
-      <form action="" method="" class="create-post">
-        <img src="/assets/images/girl.jpg" alt="" class="create-post__user-image">
-        <textarea required class="create-post__input" placeholder="What's On Your Mind ? ...."></textarea>
-        <button class="create-post__send">Post</button>
-
-        <div class="create-post__medias">
-          <a href="#" class="material-icons create-post__media">
-            image
-          </a>
-          <a href="#" class="material-icons create-post__media">
-            videocam
-          </a>
-          <a href="#" class="material-icons create-post__media">
-            description
-          </a>
-        </div>
-
-      </form>
-
-      <article>
-        <div class="post">
-          <div class="post__header">
-            <img src="/assets/images/girl.jpg" width="100" alt="" class="post__user-image">
-            <div class="post__user-info">
-              <a href="#" class="post__user-name">jessica archero</a>
-              <div class="post__user-career">full stack webdev</div>
-              <div class="post__user-level">expert</div>
-            </div>
-            <div class="post__menu">
-              <label class="material-icons" for="user-menu">menu</label>
-              <input type="checkbox" name="" id="user-menu" hidden>
-              <div class="menu">
-                <a href="#" class="menu__item">
-                  <div class="menu__name">Block</div>
-                  <div class="menu__icon material-icons">block</div>
-                </a>
-                <a href="#" class="menu__item">
-                  <div class="menu__name">Report</div>
-                  <div class="menu__icon material-icons">report</div>
-                </a>
-                <a href="#" class="menu__item">
-                  <div class="menu__name">Follow</div>
-                  <div class="menu__icon material-icons">favorite</div>
-                </a>
-              </div>
+          <div class="flex flex-col items-center gap-1 p-2">
+            <a
+              href="#"
+              class="text-primaryLight dark:text-primaryDark font-bold text-lg"
+              >jessica archero</a
+            >
+            <div class="flex justify-between items-center mt-2 gap-5">
+              <a href="#">
+                <div class="material-icons">person_add</div>
+              </a>
+              <a href="#">
+                <div class="material-icons">message</div>
+              </a>
+              <a href="#">
+                <div class="material-icons">info</div>
+              </a>
             </div>
           </div>
-          <div class="post__body">
-            <div class="post__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam aliquid
-              nisi fugiat, asperiores incidunt alias inventore, animi temporibus voluptate accusantium cumque eaque.
-            </div>
-            <img src="/assets/images/hacker-background.jpg" alt="" class="post__image">
-          </div>
-          <div class="post__reactions">
-            <button class="post__reaction post__reaction--liked">
-              <div class="material-icons">thumb_up</div>
-              <div class="reaction__number">32</div>
-            </button>
-            <button class="post__reaction" onclick="showComments()">
-              <div class="material-icons">comment</div>
-              <div class="reaction__number">15</div>
-            </button>
-            <button class="post__reaction" onclick="showReviews()">
-              <div class="material-icons">reviews</div>
-              <div class="reaction__number">4</div>
-            </button>
-            <button class="post__reaction">
-              <div class="material-icons">share</div>
-              <div class="reaction__number">13</div>
-            </button>
-          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2.5 items-start mb-10">
+        <div
+          class="w-full h-[100px] flex border-2 border-secondaryLight dark:border-secondaryDark rounded-xl gap-2.5 overflow-auto children:cursor-pointer [&>*:not(:first-child)]:border-2 [&>*:not(:first-child)]:border-t-0 children:border-t-0 children:border-secondaryLight children:dark:border-secondaryDark [&>*:not(:first-child)]:h-[90px] children:basis-[70px] children:shrink-0 children:grow-0 [&>*:not(:first-child)]:rounded-br-2xl [&>*:not(:first-child)]:rounded-bl-md children:overflow-hidden"
+        >
+          <a
+            href="#"
+            class="material-icons flex justify-center items-center h-full border-r-2"
+          >
+            add_circle
+          </a>
+
+          <a href="#" class="">
+            <img
+              src="/assets/images/girl.jpg"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </a>
         </div>
 
-        <div class="bars">
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
+        <form
+          action=""
+          method=""
+          class="w-full flex gap-2.5 relative border-2 border-secondaryLight dark:border-secondaryDark rounded-xl mb-10"
+        >
+          <img
+            src="/assets/images/girl.jpg"
+            alt=""
+            class="object-cover rounded-xl rounded-tr-none border-secondaryLight dark:border-secondaryDark border-r-2 h-full w-20"
+          />
+          <textarea
+            required
+            class="resize-none scrollbar-hide bg-transparent flex-1 w-full h-[100px] mr-5 placeholder:text-xl mb-5 peer"
+            placeholder="What's On Your Mind ? ...."
+          ></textarea>
+          <button
+            class="bg-primaryLight dark:bg-primaryDark text-backgroundLight dark:text-backgroundDark px-5 py-1 rounded transition-transform scale-100 peer-placeholder-shown:scale-0 absolute right-6 bottom-0 translate-y-2/4"
+          >
+            Post
+          </button>
 
-
-        <div class="comments comments--active" data-comments>
-          <div class="comments__header title-sep">
-            <div class="comment__title">Comments</div>
-            <a href="#">show all</a>
+          <div
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 flex flex-col gap-1 children:bg-backgroundLight children:dark:bg-backgroundDark children:w-6 children:h-6 children:text-secondaryLight children:dark:text-secondaryDark children:transition-colors"
+          >
+            <a href="#" class="material-icons"> image </a>
+            <a href="#" class="material-icons"> videocam </a>
+            <a href="#" class="material-icons"> description </a>
           </div>
+        </form>
 
-          <div class="comment">
-            <a href="#" class="comment__user-image-container">
-              <img src="/assets/images/girl.jpg" class="comment__user-image" alt="">
-            </a>
-            <div class="comment__content">
-              <div class="comment__reactions">
-                <button class="comment__reaction comment__reaction--liked" data-number="2">
-                  <div class="material-icons">thumb_up</div>
-                </button>
-                <button class="comment__reaction" data-number="1">
-                  <div class="material-icons">reply</div>
-                </button>
-              </div>
-              <div class="comment__content-header">
-                <a href="#" class="comment__user-name">Jessica Archero</a>
-                <div class="comment__menu">
-                  <label class="material-icons" for="comment-menu">...</label>
-                  <input type="checkbox" name="" id="comment-menu" hidden>
-                  <div class="menu">
-                    <a href="#" class="menu__item">
-                      <div class="menu__name">Block</div>
-                      <div class="menu__icon material-icons">menu</div>
-                    </a>
-                    <a href="#" class="menu__item">
-                      <div class="menu__name">Report</div>
-                      <div class="menu__icon material-icons">menu</div>
-                    </a>
-                    <a href="#" class="menu__item">
-                      <div class="menu__name">Delete</div>
-                      <div class="menu__icon material-icons">menu</div>
-                    </a>
-                  </div>
+        <article class="flex flex-col items-center md:max-w-[600px]">
+          <div
+            class="w-full flex gap-3 pb-1 flex-col border-2 border-secondaryLight dark:border-secondaryDark rounded-xl"
+          >
+            <div class="flex gap-2">
+              <img
+                src="/assets/images/girl.jpg"
+                alt=""
+                class="h-20 w-16 rounded-xl rounded-tr-none rounded-bl-none object-cover border-r-2 border-b-2 border-secondaryLight dark:border-secondaryDark"
+              />
+              <div class="flex-1">
+                <a
+                  href="#"
+                  class="text-primaryLight dark:text-primaryDark text-base sm:text-lg font-bold"
+                  >jessica archero</a
+                >
+                <div class="text-xs text-opacity-50 dark:text-opacity-50">
+                  full stack webdev
                 </div>
               </div>
-              <div class="comment__text">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, beatae!
+              <div class="self-center mr-2 relative">
+                <button
+                  class="material-icons"
+                  onclick="this.nextElementSibling.classList.toggle('scale-0')"
+                >
+                  menu
+                </button>
+                <div class="menu scale-0">
+                  <a href="#">
+                    <div>Block</div>
+                    <div class="material-icons">block</div>
+                  </a>
+                  <a href="#">
+                    <div>Report</div>
+                    <div class="material-icons">report</div>
+                  </a>
+                  <a href="#">
+                    <div>Follow</div>
+                    <div class="material-icons">favorite</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="px-2 text-sm md:tracking-wide">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat quibusdam aliquid nisi fugiat, asperiores incidunt
+                alias inventore, animi temporibus voluptate accusantium cumque
+                eaque.
+              </div>
+              <img
+                src="/assets/images/hacker-background.jpg"
+                alt=""
+                class="w-full max-h-[400px] object-cover"
+              />
+            </div>
+            <div
+              class="flex items-center justify-around p-2 ascendent:font-bold"
+            >
+              <button
+                class="ascendent:text-primaryLight ascendent:dark:text-primaryDark"
+              >
+                <div class="material-icons font-bold">thumb_up</div>
+                <div>32</div>
+              </button>
+              <button
+                onclick="document.querySelector('[data-reviews]').classList.add('hidden'); document.querySelector('[data-comments]').classList.remove('hidden')"
+              >
+                <div class="material-icons">comment</div>
+                <div>15</div>
+              </button>
+              <button
+                onclick="document.querySelector('[data-reviews]').classList.remove('hidden'); document.querySelector('[data-comments]').classList.add('hidden')"
+              >
+                <div class="material-icons">reviews</div>
+                <div>4</div>
+              </button>
+              <button>
+                <div class="material-icons">share</div>
+                <div>13</div>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="flex gap-6 h-12 items-stretch children:bg-secondaryLight dark:children:bg-secondaryDark children:w-5"
+          >
+            <span></span>
+            <span></span>
+          </div>
+
+          <div
+            class="hidden flex flex-col border-2 border-secondaryLight dark:border-secondaryDark rounded-xl max-w-sm"
+            data-comments
+          >
+            <div
+              class="p-3 border-b-2 border-b-secondaryLight dark:border-b-secondaryDark flex justify-between children:font-bold"
+            >
+              <div>Comments</div>
+              <a
+                href="#"
+                class="text-xs self-center text-primaryLight dark:text-primaryDark"
+                >show all</a
+              >
+            </div>
+
+            <div class="flex items-start gap-4 p-4">
+              <a
+                href="#"
+                class="flex flex-none w-12 h-12 rounded-full overflow-hidden"
+              >
+                <img
+                  src="/assets/images/girl.jpg"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </a>
+              <div
+                class="grow p-2 bg-accentLight dark:bg-accentDark rounded-xl rounded-tl-none relative"
+              >
+                <div
+                  class="absolute bottom-0 right-8 bg-accentLight dark:bg-accentDark translate-y-1/2 flex items-center gap-2 border-2 border-backgroundLight dark:border-backgroundDark rounded-full px-1 children:flex children:items-center children:gap-1 ascendent:text-xs ascendent:font-bold"
+                >
+                  <button
+                    class="children:text-primaryLight dark:children;text-primaryDark"
+                  >
+                    <div class="material-icons">thumb_up</div>
+                    <span>1</span>
+                  </button>
+                  <button>
+                    <div class="material-icons">reply</div>
+                    <span>1</span>
+                  </button>
+                </div>
+                <div class="flex justify-between items-start">
+                  <a href="#" class="font-bold text-sm">Jessica Archero</a>
+                  <div class="relative">
+                    <button
+                      class="material-icons"
+                      onclick="this.nextElementSibling.classList.toggle('scale-0')"
+                    >
+                      more_horiz
+                    </button>
+                    <div class="menu z-[1] scale-0">
+                      <a href="#">
+                        <div>Block</div>
+                        <div class="material-icons">menu</div>
+                      </a>
+                      <a href="#">
+                        <div>Report</div>
+                        <div class="material-icons">menu</div>
+                      </a>
+                      <a href="#">
+                        <div>Delete</div>
+                        <div class="material-icons">menu</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-sm pb-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatum, beatae!
+                </div>
+              </div>
+            </div>
+
+            <form
+              class="flex items-start gap-4 border-secondaryLight dark:border-secondaryDark border-t-2 relative p-3 pb-4"
+            >
+              <a
+                href="#"
+                class="flex-none w-12 h-12 rounded-full overflow-hidden"
+              >
+                <img
+                  src="/assets/images/girl.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </a>
+              <textarea
+                placeholder="Write a Comment ...."
+                name=""
+                class="grow w-full overflow-auto scrollbar-hide resize-none bg-transparent peer"
+              ></textarea>
+              <button
+                class="bg-primaryLight dark:bg-primaryDark text-backgroundLight dark:text-backgroundDark px-5 py-1 rounded transition-transform scale-100 peer-placeholder-shown:scale-0 absolute right-6 bottom-0 translate-y-2/4"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+
+          <div
+            class="flex flex-col border-2 border-secondaryLight dark:border-secondaryDark rounded-xl max-w-sm"
+            data-reviews
+          >
+            <div
+              class="p-3 border-b-2 border-b-secondaryLight dark:border-b-secondaryDark flex justify-between children:font-bold"
+            >
+              <div>Reviews</div>
+              <a
+                href="#"
+                class="text-xs self-center text-primaryLight dark:text-primaryDark"
+                >see all</a
+              >
+            </div>
+
+            <div class="flex items-start gap-4 p-4">
+              <a
+                href="#"
+                class="flex-none w-12 h-12 rounded-full overflow-hidden"
+              >
+                <img
+                  src="/assets/images/girl.jpg"
+                  alt=""
+                  class="w-full h-full object-cover"
+                />
+              </a>
+              <div class="text-sm">
+                <a
+                  href="#"
+                  class="text-primaryLight dark:text-primaryDark font-bold text-sm"
+                  >Jessica Archero</a
+                >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                quod dignissimos perspiciatis?
               </div>
             </div>
           </div>
+        </article>
+      </div>
 
-          <form class="add-comment">
-            <a href="#" class="add-comment__user-image-container">
-              <img src="/assets/images/girl.jpg" alt="" class="add-comment__user-image">
-            </a>
-            <textarea placeholder="Write a Comment ...." name="" class="add-comment__input"></textarea>
-            <button class="add-comment__send">Send</button>
-          </form>
-
-        </div>
-
-        <div class="reviews" data-reviews>
-          <div class="title-sep reviews__header">
-            <div class="reviews__title">Reviews</div>
-            <a href="#">see all</a>
-          </div>
-
-          <div class="review">
-            <a href="#" class="review__user-image-container">
-              <img src="/assets/images/girl.jpg" alt="" class="review__user-image">
-            </a>
-            <div class="review__text">
-              <a href="#" class="review__user-name">Jessica Archero</a>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quod dignissimos perspiciatis?
-            </div>
-          </div>
-
-
-        </div>
-
-      </article>
-
-    </div>
-
-    <div class="sidebar workspace">
-      <a href="#" class="workspace__link" data-icon="group_add">Follows</a>
-      <a href="#" class="workspace__link" data-icon="handshake">Collaborators</a>
-      <a href="#" class="workspace__link" data-icon="group">Groups</a>
-      <a href="#" class="workspace__link" data-icon="workspaces">Workspace</a>
-    </div>
-
-  </main>
-
-</body>
-
+      <div
+        class="max-h-screen sticky hidden top-[110px] lg:flex border-l-2 border-secondaryLight dark:border-secondaryDark py-2.5 px-5 flex-col basis-35 shrink-0 grow-0 gap-5 children:flex children:items-center children:font-bold children:gap-2.5 ascendent:text-primaryLight ascendent:dark:text-primaryDark"
+      >
+        <a href="#">
+          <span class="material-icons">group_add</span>
+          Follows
+        </a>
+        <a href="#">
+          <span class="material-icons">handshake</span>
+          Collaborators
+        </a>
+        <a href="#">
+          <span class="material-icons">group</span>
+          Groups
+        </a>
+        <a href="#">
+          <span class="material-icons">workspaces</span>
+          Workspace
+        </a>
+      </div>
+    </main>
+  </body>
 </html>
